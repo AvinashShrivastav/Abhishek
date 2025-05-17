@@ -265,6 +265,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">CFA Institute</h6>
                 <p class="card-text">Comprehensive financial analysis and investment management certification.</p>
                 <p class="card-text"><small class="text-muted">In Progress</small></p>
+                <button class="btn-see-credentials" onclick="showCredential('assets/certificates/cfa-level-1.jpg', this)">See Credentials</button>
               </div>
             </div>
           </div>
@@ -275,6 +276,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">Wall Street Prep</h6>
                 <p class="card-text">Advanced financial modeling techniques for valuation and analysis.</p>
                 <p class="card-text"><small class="text-muted">Completed 2023</small></p>
+                <button class="btn-see-credentials" onclick="showCredential('assets/certificates/financial-modeling.pdf', this)">See Credentials</button>
               </div>
             </div>
           </div>
@@ -285,6 +287,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">Coursera</h6>
                 <p class="card-text">Business strategy formulation and implementation for competitive advantage.</p>
                 <p class="card-text"><small class="text-muted">Completed 2022</small></p>
+                <button class="btn-see-credentials" onclick="showCredential('assets/certificates/strategic-management.jpg', this)">See Credentials</button>
               </div>
             </div>
           </div>
@@ -295,6 +298,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">Microsoft</h6>
                 <p class="card-text">Mastered advanced Excel functions, data analysis, and automation for business applications.</p>
                 <p class="card-text"><small class="text-muted">Completed 2023</small></p>
+                <button class="btn-see-credentials" onclick="showCredential('assets/certificates/excel-for-business.jpg', this)">See Credentials</button>
               </div>
             </div>
           </div>
@@ -305,6 +309,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">Google</h6>
                 <p class="card-text">Practical data analytics, visualization, and reporting for business decision making.</p>
                 <p class="card-text"><small class="text-muted">Completed 2024</small></p>
+                <button class="btn-see-credentials" onclick="showCredential('assets/certificates/data-analytics.jpg', this)">See Credentials</button>
               </div>
             </div>
           </div>
@@ -315,6 +320,7 @@
                 <h6 class="card-subtitle mb-2 text-muted">HubSpot Academy</h6>
                 <p class="card-text">Digital marketing fundamentals, SEO, content, and campaign management.</p>
                 <p class="card-text"><small class="text-muted">Completed 2023</small></p>
+                <button class="btn-see-credentials" onclick="showCredential('assets/certificates/digital-marketing.jpg', this)">See Credentials</button>
               </div>
             </div>
           </div>
@@ -896,6 +902,39 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Modal for certificate -->
+  <div id="credentialModal" style="display:none; position:fixed; z-index:99999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
+    <span onclick="closeCredential()" style="position:absolute; top:30px; right:40px; color:#fff; font-size:2rem; cursor:pointer;">&times;</span>
+    <img id="credentialImg" src="" alt="Certificate" style="max-width:90vw; max-height:80vh; border-radius:12px; box-shadow:0 4px 32px rgba(0,0,0,0.3); background:#fff;">
+    <iframe id="credentialPdf" style="display:none; width:90vw; height:80vh; border:none; background:#fff; border-radius:12px;"></iframe>
+  </div>
+  <script>
+  function showCredential(path, btn) {
+    // Button animation
+    btn.classList.add('active');
+    setTimeout(() => btn.classList.remove('active'), 300);
+    // Show modal
+    const modal = document.getElementById('credentialModal');
+    const img = document.getElementById('credentialImg');
+    const pdf = document.getElementById('credentialPdf');
+    if (path.endsWith('.pdf')) {
+      img.style.display = 'none';
+      pdf.style.display = 'block';
+      pdf.src = path;
+    } else {
+      img.style.display = 'block';
+      pdf.style.display = 'none';
+      img.src = path;
+    }
+    modal.style.display = 'flex';
+  }
+  function closeCredential() {
+    document.getElementById('credentialModal').style.display = 'none';
+    document.getElementById('credentialImg').src = '';
+    document.getElementById('credentialPdf').src = '';
+  }
+  </script>
 
 </body>
 

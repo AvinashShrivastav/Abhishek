@@ -1655,3 +1655,47 @@ section,
 .industry-card:hover {
   box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 3px 12px rgba(0,0,0,0.12);
 }
+
+.btn-see-credentials {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 22px;
+  background: #fff;
+  color: #10244C;
+  border: 1.5px solid #10244C;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  position: relative;
+  transition: 
+    transform 0.2s cubic-bezier(.4,2,.6,1),
+    box-shadow 0.2s cubic-bezier(.4,2,.6,1),
+    color 0.2s,
+    border-color 0.2s;
+  overflow: hidden;
+}
+
+.btn-see-credentials:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  bottom: 0;
+  height: 0;
+  background: #888;
+  border-radius: 2px;
+  transition: height 0.2s;
+}
+
+.btn-see-credentials.active {
+  transform: scale(0.96);
+  color: #888;
+  border-color: #888;
+}
+
+.btn-see-credentials.active:after {
+  height: 3px;
+}
