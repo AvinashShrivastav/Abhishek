@@ -1699,3 +1699,25 @@ section,
 .btn-see-credentials.active:after {
   height: 3px;
 }
+
+.btn-see-credentials:hover {
+  color: #F2C522;
+  border-color: #F2C522;
+}
+
+/* Reduce gap below See Credentials button in course cards */
+.course-card .btn-see-credentials {
+  margin-bottom: 8px;
+}
+
+.course-card .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.course-card .btn-see-credentials {
+  margin-top: 12px;
+  margin-bottom: 0;
+  align-self: flex-start;
+}
