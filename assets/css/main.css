@@ -972,6 +972,32 @@ section,
   z-index: 1;
 }
 
+.resume-title-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 6px;
+}
+
+.resume-title-row h4 {
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.resume-date {
+  font-size: 16px;
+  font-weight: 700;
+  color: #10244C;
+  background: #f3f3f3;
+  border-radius: 6px;
+  padding: 2px 14px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
@@ -1702,7 +1728,7 @@ section,
 
 .btn-see-credentials:hover {
   color: #F2C522;
-  border-color: #F2C522;
+  /* border-color: #F2C522; */
 }
 
 /* Reduce gap below See Credentials button in course cards */
