@@ -477,7 +477,7 @@
             <li data-filter=".filter-case">Case Competitions</li>
             <li data-filter=".filter-research">Research Reports</li>
             <li data-filter=".filter-data">Data Analysis</li>
-            <li data-filter=".filter-other">Other</li>
+            <li data-filter=".filter-other">Others</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -489,7 +489,7 @@
                   <h4><strong>Financial Modelling & Valuation</strong></h4>
                   <p>of Indian Multinational Company, UPL Ltd</p>
                   <div class="portfolio-links">
-                    <button class="btn-view-project" onclick="location.href='portfolio-details.html'">View Project</button>
+                    <button class="btn-view-project" onclick="openExcelFile('portfolio/UPL_Ltd_Valuation.xlsx')">View Project</button>
                   </div>
                 </div>
               </div>
@@ -565,7 +565,7 @@
                 <img src="assets/img/portfolio/case-2.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
                   <h4><strong>Prosper: Case competition</strong></h4>
-                  <p>by UPSRLM, Government of India</p>
+                  <p>by UPSRLM, Government of India, 2024</p>
                   <div class="portfolio-links">
                     <button class="btn-view-project" onclick="location.href='portfolio-details.html'">View Pdf</button>
                   </div>
@@ -1033,6 +1033,19 @@
     document.getElementById('credentialImg').src = '';
     document.getElementById('credentialPdf').src = '';
   }
+  </script>
+
+  <script>
+    function openExcelFile(filePath) {
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = filePath;
+      link.download = ''; // Empty string to use the original filename
+      link.target = '_blank'; // Open in new tab
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   </script>
 
 </body>
